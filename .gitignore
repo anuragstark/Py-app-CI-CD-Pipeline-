@@ -1,0 +1,68 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.manifest
+*.spec
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+
+# Docker
+.dockerignore
+Dockerfile.*.backup
+docker-compose.override.yml
+
+# Kubernetes / Minikube
+.kube/
+.minikube/
+*.yaml.backup
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.iml
+
+# Test / Coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Misc
+*.bak
+*.old

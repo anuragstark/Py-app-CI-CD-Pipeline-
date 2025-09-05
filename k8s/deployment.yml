@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicd-demo-app
+  labels:
+    app: cicd-demo-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cicd-demo-app
+  template:
+    metadata:
+      labels:
+        app: cicd-demo-app
+    spec:
+      containers:
+        - name: app
+          image: anuragstark/cicd-demo-app:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_VERSION
+              value: "1.0.0"
+            - name: ENVs
+              value: "production"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
